@@ -1,0 +1,26 @@
+﻿@model Catalogue?
+
+@{
+    ViewData["Title"] = "Products List";
+}
+
+@foreach (var cat in Model.Products)
+{
+    <div>
+        ------
+        <img src="@cat.Image" width="100" height="100">
+        @cat.Id
+        -
+        @cat.Name
+    </div>
+}
+
+<form method="post">
+    Id: <input type="text" name="Id" required/>
+    <br />
+    Name: <input type="text" name="Name"/>
+    <br />
+    Image Link: <input type="text" name="Image"/>
+    <br />
+    <input type="submit" name="submit" value="Create"/>
+</form>
